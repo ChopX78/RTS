@@ -1,7 +1,12 @@
 #!/bin/bash
 
-read -p "Введите число: " num
+if [[ -z $1 ]]; then
+    echo "Ошибка: Укажите число в качестве аргумента."
+    echo "Пример: $0 5"
+    exit 1
+fi
 
+num=$1
 factorial=1
 
 if [[ $num -lt 0 ]]; then
